@@ -1,0 +1,13 @@
+name: Hello World
+
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+      - uses: actions/checkout@v7
+
+      - name: Run a command
+      - run: echo "Hello World !"
