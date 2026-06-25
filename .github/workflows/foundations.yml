@@ -1,0 +1,25 @@
+name: Foundations practice
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  inspect-env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Who did this?
+        run: |
+          echo "{{github.actor}}"
+          echo "{{github.ref_name}}"
+          echo "{{github.event_name}}"
+
+      - name: Check runner env
+        run: |
+          echo "Node Js Version $(node --version)"
+          echon "Python version $(python3 --version)"
